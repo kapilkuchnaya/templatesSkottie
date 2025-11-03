@@ -68,6 +68,11 @@ export function TemplateEditorLayout({ initialTemplates }: TemplateEditorLayoutP
         URL.revokeObjectURL(url);
     };
 
+    const handleClearJson = () => {
+        setRawJson('{}');
+        setTemplates([]);
+    };
+
     return (
         <div className="flex min-h-screen w-full flex-col">
             <Header />
@@ -90,6 +95,7 @@ export function TemplateEditorLayout({ initialTemplates }: TemplateEditorLayoutP
                         onJsonContentChange={handleRawJsonChange}
                         readOnly={false}
                         showSave={true}
+                        onClear={handleClearJson}
                     />
                 </div>
                 <Separator className="my-4" />

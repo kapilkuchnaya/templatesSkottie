@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { saveTemplatesDbNew } from "@/lib/actions";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Loader2, Save, Download } from "lucide-react";
+import { Loader2, Save, Download, Trash2 } from "lucide-react";
 
 interface JsonEditorProps {
     jsonContent: string;
@@ -16,6 +16,7 @@ interface JsonEditorProps {
     title: string;
     description: string;
     showSave?: boolean;
+    onClear?: () => void;
 }
 
 export function JsonEditor({
@@ -25,6 +26,7 @@ export function JsonEditor({
     title,
     description,
     showSave = true,
+    onClear,
 }: JsonEditorProps) {
     const [isPending, startTransition] = useTransition();
     const { toast } = useToast();
@@ -88,6 +90,12 @@ export function JsonEditor({
                         placeholder="Enter valid JSON..."
                     />
                     <div className="flex justify-end gap-2">
+                        {onClear && !readOnly && (
+                            <Button onClick={onClear} variant="destructive" disabled={isPending}>
+                                <Trash2 className="mr-2 h-4 w-4" />
+                                Clear Data
+                            </Button>
+                        )}
                         {!readOnly && (
                              <Button onClick={handleDownload} variant="outline" disabled={isPending}>
                                 <Download className="mr-2 h-4 w-4" />
