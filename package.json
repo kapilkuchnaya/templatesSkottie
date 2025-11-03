@@ -1,3 +1,4 @@
+
 {
   "name": "nextn",
   "version": "0.1.0",
@@ -6,10 +7,13 @@
     "dev": "next dev --turbopack -p 9002",
     "genkit:dev": "genkit start -- tsx src/ai/dev.ts",
     "genkit:watch": "genkit start -- tsx --watch src/ai/dev.ts",
-    "build": "NODE_ENV=production next build",
+    "build": "next build",
     "start": "npm run build && next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": "18.x"
   },
   "dependencies": {
     "@genkit-ai/google-genai": "^1.20.0",
