@@ -3,10 +3,9 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import dynamic from 'next/dynamic';
 import type { Template } from "@/lib/definitions";
 import { TemplateCard } from "./template-card";
-import { TemplatePreviewModal } from "./template-preview-modal";
-import { TemplateVariationsModal } from "./template-variations-modal";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
@@ -18,6 +17,10 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
+
+const TemplatePreviewModal = dynamic(() => import('./template-preview-modal').then(mod => mod.TemplatePreviewModal), { ssr: false });
+const TemplateVariationsModal = dynamic(() => import('./template-variations-modal').then(mod => mod.TemplateVariationsModal), { ssr: false });
+
 
 type TemplateActions = {
     delete: (id: string) => void;
@@ -72,7 +75,9 @@ export function TemplateGrid({
 
   const handleDelete = (id: string) => {
     const updatedTemplates = templates.filter(t => (t.id || t.templateId) !== id);
-    onTemplatesChange?.(updatedTemplates);
+    if(onTemplatesChange) {
+      onTemplatesChange(updatedTemplates);
+    }
   };
 
   const handleTogglePro = (id: string) => {
@@ -82,7 +87,9 @@ export function TemplateGrid({
       }
       return t;
     });
-    onTemplatesChange?.(updatedTemplates);
+    if(onTemplatesChange) {
+      onTemplatesChange(updatedTemplates);
+    }
   };
 
   const handleToggleMulti = (id: string) => {
@@ -92,7 +99,9 @@ export function TemplateGrid({
       }
       return t;
     });
-    onTemplatesChange?.(updatedTemplates);
+    if(onTemplatesChange) {
+      onTemplatesChange(updatedTemplates);
+    }
   };
 
   const currentActions: TemplateActions = {
