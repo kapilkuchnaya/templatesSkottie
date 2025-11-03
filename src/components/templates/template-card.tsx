@@ -79,6 +79,7 @@ export function TemplateCard({ template, onPreview, onViewVariations, actions }:
   };
 
   const handleDownload = () => {
+    if (typeof window === "undefined") return;
     const jsonString = JSON.stringify(template, null, 2);
     const blob = new Blob([jsonString], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
@@ -92,6 +93,7 @@ a.click();
   };
 
   const handleCopyId = () => {
+    if (typeof window === "undefined") return;
     const idToCopy = template.id || template.templateId;
     navigator.clipboard.writeText(idToCopy);
     toast({
