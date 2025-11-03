@@ -1,0 +1,60 @@
+{
+  "node": {
+    "40bcf7d9e14908faffc1bfaf07afa9111107777633": {
+      "workers": {
+        "app/admin/templates-db-new/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/templates-db-new/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/admin/templates-db-new/page": "action-browser"
+      }
+    },
+    "60cbb3701b3d531f83a4757a0a2a05ce853bb511fe": {
+      "workers": {
+        "app/admin/templates-db-new/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/templates-db-new/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/admin/templates-db-new/page": "action-browser"
+      }
+    },
+    "603adedf048c24623454e943645362eddde2f135ee": {
+      "workers": {
+        "app/admin/templates-db-new/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/templates-db-new/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/admin/templates-db-new/page": "action-browser"
+      }
+    },
+    "605dac353029d896248a2387509fc33466ac8b9125": {
+      "workers": {
+        "app/admin/templates-db-new/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/templates-db-new/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/admin/templates-db-new/page": "action-browser"
+      }
+    },
+    "009fb872ef6e593b70b3a3e1d2dd02a82287c7f66b": {
+      "workers": {
+        "app/admin/templates-db-new/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/templates-db-new/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/admin/templates-db-new/page": "action-browser"
+      }
+    }
+  },
+  "edge": {}
+}
