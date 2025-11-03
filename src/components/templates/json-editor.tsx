@@ -48,6 +48,7 @@ export function JsonEditor({
     };
 
     const handleDownload = () => {
+        if (typeof window === "undefined") return;
         try {
             const blob = new Blob([jsonContent], { type: 'application/json' });
             const url = URL.createObjectURL(blob);
